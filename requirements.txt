@@ -27,3 +27,5 @@ Bottleneck
 mkl-fft
 numpy
 mkl-random
+lightgbm
+tk
