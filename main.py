@@ -21,7 +21,7 @@ def estimate():
         duration = result['duration']
         skills = result.getlist('skills')
 
-        pkl_file = open('flask-app\index_dict.pkl', 'rb')
+        pkl_file = open('index_dict.pkl', 'rb')
         index_dict = pickle.load(pkl_file)
         cat_vector = np.zeros(len(index_dict))
         
@@ -63,10 +63,10 @@ def estimate():
         except:
             pass
 
-        pkl_file = open('flask-app\internshala_lgbm_model.pkl', 'rb')
+        pkl_file = open('internshala_lgbm_model.pkl', 'rb')
         model = pickle.load(pkl_file)
 
-        scaler_file = open("flask-app\scaler.pkl", "rb")
+        scaler_file = open("scaler.pkl", "rb")
         scaler = pickle.load(scaler_file)
 
         prediction = model.predict(scaler.transform(cat_vector.reshape(1,-1)))
